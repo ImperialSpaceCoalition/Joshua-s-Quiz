@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Quiz</title>
-  <link rel="stylesheet" href="./assets/styles.css">
-</head>
-
-<body>
-  <div id="quiz-container">
-    <h1 id="question">Welcome to Code Quiz!</h1>
-    <div id="options"></div>
-    <button id="start-btn">Start Quiz</button>
-  </div>
-
-  <div id="score-container">
-    <p>High Score: <span id="high-score">0</span></p>
-  </div>
-
-  <script src="./assets/script.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Quiz App</h1>
+        <p id="timer">30:00</p> <!-- Added this line for the timer display -->
+    </header>
+      </header>
+      <div id="quiz-container" class="card">
+        <div class="card-header">
+          <h2 id="question">Welcome to Joshua's Coding Quiz Assignment</h2>
+        </div>
+        <div id="options" class="card-body"></div>
+        <div class="card-footer">
+          <button id="start-btn" class="btn">Start Quiz</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-footer">
+          <p id="high-score">High Score: 0</p>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>

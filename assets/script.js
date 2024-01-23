@@ -82,6 +82,60 @@ document.addEventListener('DOMContentLoaded', function () {
             options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
             answer: 'Paris',
         },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
+
+        {
+            text: 'What is the capital of France?',
+            options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+            answer: 'Paris',
+        },
         // Add more questions as needed
     ];
 

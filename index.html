@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="./assets/styles.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Quiz App</h1>
-        <p id="timer">30:00</p> <!-- Added this line for the timer display -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua's Quiz App</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Quiz App</h1>
+      <p id="timer">30:00</p>
     </header>
-      </header>
-      <div id="quiz-container" class="card">
-        <div class="card-header">
-          <h2 id="question">Welcome to Joshua's Coding Quiz Assignment</h2>
-        </div>
-        <div id="options" class="card-body"></div>
-        <div class="card-footer">
-          <button id="start-btn" class="btn">Start Quiz</button>
-        </div>
+    <div id="quiz-container" class="card">
+      <div class="card-header">
+        <h2 id="question">Welcome to Joshua's Coding Quiz Assignment</h2>
       </div>
-      <div class="card">
-        <div class="card-footer">
-          <p id="high-score">High Score: 0</p>
-        </div>
+      <div id="options" class="card-body">
+        <label>
+          <input type="checkbox" value="Option 1" />
+          Option 1
+        </label>
+        <label>
+          <input type="checkbox" value="Option 2" />
+          Option 2
+        </label>
+        <!-- Add more checkbox options as needed -->
+      </div>
+      <div class="card-footer">
+        <button id="start-btn" class="btn">Start Quiz</button>
+        <button id="restart-btn" class="btn" style="display:none;">Restart Quiz</button>
       </div>
     </div>
-    <script src="./assets/script.js"></script>
-  </body>
+    <div class="card">
+      <div class="card-footer">
+        <p id="high-score">High Score: 0</p>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/script.js"></script>
+</body>
 </html>

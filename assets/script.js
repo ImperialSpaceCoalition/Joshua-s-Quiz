@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var highScore = 0;
   var quizStarted = false;
 
+  // Hide the question area initially
+  questionElement.style.display = 'none';
+  optionsContainer.style.display = 'none';
+
   startButton.addEventListener('click', function () {
     if (!quizStarted) {
       startQuiz();
@@ -25,10 +29,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function startQuiz() {
     quizStarted = true;
-    loadRandomQuestion();
+    loadQuestion();
     startTimer();
     startButton.textContent = 'Submit';
     restartButton.style.display = 'none'; // Hide restart button
+
+    // Show the question area
+    questionElement.style.display = 'block';
+    optionsContainer.style.display = 'block';
   }
 
   function submitAnswer() {
@@ -45,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update score or perform other actions
     }
 
-    loadRandomQuestion();
+    loadNextQuestion();
   }
 
   function restartQuiz() {
@@ -55,7 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
     quizStarted = false;
     startButton.style.display = 'block'; // Show start button
     restartButton.style.display = 'none'; // Hide restart button
-    startQuiz(); // Restart the quiz
+
+    // Hide the question area again
+    questionElement.style.display = 'none';
+    optionsContainer.style.display = 'none';
   }
 
   function startTimer() {
@@ -119,12 +130,22 @@ document.addEventListener('DOMContentLoaded', function () {
       optionsContainer.appendChild(document.createElement('br'));
     });
   }
-  
-   // Selects Random Question from sampleQuestions
-  function loadRandomQuestion() {
-    currentQuestionIndex = Math.floor(Math.random() * sampleQuestions.length);
+
+  function loadQuestion() {
     var currentQuestion = sampleQuestions[currentQuestionIndex];
     displayQuestion(currentQuestion);
+  }
+
+  function loadNextQuestion() {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < sampleQuestions.length) {
+      loadQuestion();
+      startTimer();
+    } else {
+      // End the quiz after 20 questions
+      endQuiz();
+    }
   }
 
   function getSelectedAnswers() {
@@ -137,8 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     return selectedAnswers;
   }
-  
-  // Compares correct answer versus wrong answer
+
   function compareArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {
       return false;
@@ -269,7 +289,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
-
-
-  
-  

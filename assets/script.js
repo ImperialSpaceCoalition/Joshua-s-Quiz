@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentQuestion = sampleQuestions[currentQuestionIndex];
 
     // Check if selected answers are correct
-    var isCorrect = compareArrays(selectedAnswers, currentQuestion.options);
+    var isCorrect = compareArrays(selectedAnswers, currentQuestion.answer);
 
     // Provide feedback
     alert(isCorrect ? 'Correct!' : 'Incorrect!');
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var userAnswers = getSelectedAnswers();
       var currentQuestion = sampleQuestions[i];
 
-      if (compareArrays(userAnswers, currentQuestion.options)) {
+      if (compareArrays(userAnswers, currentQuestion.answer)) {
         correctAnswers++;
       }
     }
@@ -176,31 +176,22 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('input[name="answer"]:checked');
   
     checkboxes.forEach(function (checkbox) {
-      selectedAnswers.push([checkbox.value]); // Store selected answers as arrays
+      selectedAnswers.push(checkbox.value); // Store selected answers as strings
     });
   
-    return selectedAnswers;
+    return selectedAnswers.join(','); // Concatenate selected answers into a single string
   }
-  
 
-  function compareArrays(arr1, arr2) {
+  function compareArrays(str1, arr2) {
+    var arr1 = str1.split(','); // Split the string into an array of selected answers
     if (arr1.length !== arr2.length) {
       return false;
     }
   
-    for (var i = 0; i < arr1.length; i++) {
-      if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
-        // If both are arrays, compare their content
-        if (!compareArrays(arr1[i], arr2[i])) {
-          return false;
-        }
-      } else if (arr1[i] !== arr2[i]) {
-        // If not arrays, compare values
-        return false;
-      }
-    }
+    var sortedArr1 = arr1.sort();
+    var sortedArr2 = arr2.sort();
   
-    return true;
+    return sortedArr1.every((value, index) => value === sortedArr2[index]);
   }
 
   // Questions
@@ -319,3 +310,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+

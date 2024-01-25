@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var highScore = 0;
   var quizStarted = false;
 
-  // Hide the question area initially
+  // Hide the question area before quiz begins
   questionElement.style.display = 'none';
   optionsContainer.style.display = 'none';
+  restartButton.style.display = 'none'; // Hide restart button initially
 
   startButton.addEventListener('click', function () {
     if (!quizStarted) {
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startButton.textContent = 'Submit';
     restartButton.style.display = 'none'; // Hide restart button
 
-    // Show the question area
+    // Show the question area now that the quiz has started
     questionElement.style.display = 'block';
     optionsContainer.style.display = 'block';
   }
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentQuestion = sampleQuestions[currentQuestionIndex];
 
     // Check if selected answers are correct
-    var isCorrect = compareArrays(selectedAnswers, currentQuestion.answer);
+    var isCorrect = compareArrays(selectedAnswers, currentQuestion.options);
 
     // Provide feedback
     alert(isCorrect ? 'Correct!' : 'Incorrect!');
@@ -61,12 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
     totalTime = 30 * 60;
     highScore = 0;
     quizStarted = false;
-    startButton.style.display = 'block'; // Show start button
-    restartButton.style.display = 'none'; // Hide restart button
+    startButton.textContent = 'Start Quiz'; // Change button text back to start
 
     // Hide the question area again
     questionElement.style.display = 'none';
     optionsContainer.style.display = 'none';
+
+    // Show the start button
+    startButton.style.display = 'block';
+
+    // Hide the restart button
+    restartButton.style.display = 'none';
   }
 
   function startTimer() {
@@ -84,12 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
     updateTimerDisplay();
   }
 
+  // Function to update the timer display
   function updateTimerDisplay() {
     var minutes = Math.floor(totalTime / 60);
     var seconds = totalTime % 60;
     timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   }
 
+  // Function to end Quiz
   function endQuiz() {
     clearInterval(timer);
 
@@ -102,13 +110,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     alert('Quiz ended!\nYour score: ' + score + '\nHigh Score: ' + highScore);
+
+    // Change button text to "Restart Quiz"
+    startButton.textContent = 'Restart Quiz';
+    restartButton.style.display = 'inline'; // Show restart button
   }
 
   function calculateScore() {
-    // Placeholder function for calculating the score
-    // implement the logic based on the user's performance
-    // return a random score between 0 and 100
-    return Math.floor(Math.random() * 101);
+    var correctAnswers = 0;
+
+    for (var i = 0; i < sampleQuestions.length; i++) {
+      var userAnswers = getSelectedAnswers();
+      var currentQuestion = sampleQuestions[i];
+
+      if (compareArrays(userAnswers, currentQuestion.options)) {
+        correctAnswers++;
+      }
+    }
+
+    // Calculate the percentage of correct answers and convert it to a score out of 100
+    var percentageCorrect = (correctAnswers / sampleQuestions.length) * 100;
+    var score = Math.round(percentageCorrect);
+
+    return score;
   }
 
   function displayQuestion(question) {
@@ -143,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
       loadQuestion();
       startTimer();
     } else {
-      // End the quiz after 20 questions
       endQuiz();
     }
   }

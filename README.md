@@ -3,13 +3,13 @@
 
 # Coding Quiz Assignment
 
-Welcome to My Coding Quiz assignment! This project is designed to test your knowledge of various programming concepts. The quiz covers a range of topics, including basic HTML, JavaScript, and CSS.
+Welcome to My Coding Quiz assignment! This project is designed to test knowledge of various programming concepts. The quiz covers a range of topics, including basic HTML, JavaScript, and CSS from my first 5 weeks of Coding Bootcamp.
 
 ## Getting Started
 
-To start the quiz, follow these steps:
+To start the quiz using all the files of the repo, follow these steps:
 
-1. Open the `index.html` file in your preferred web browser or visit this link to the deployed application.
+1. Open the `index.html` file in your preferred web browser or visit the deployment link to the application.
 2. Click on the "Start Quiz" button to begin.
 3. Answer each question by selecting the appropriate checkbox for the correct options.
 4. Click on the "Submit" button to check your answers.
@@ -39,7 +39,7 @@ If you wish to restart the quiz, click the "Restart Quiz" button.
 ## Bugs
  Current known bug is timer messing up on alert prompt. working out the fix.
  if timer reaches zero, alert prompt recycles endlessly.
- my high score tracker is currently incorrect. good thing is, whether you are right or wrong, you will have 5 points-working on a fix.
+there is a double restart button at the end. need to hide it. the second "restart quiz" button is the one that works.
 
  
 

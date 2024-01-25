@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadQuestion();
     startTimer();
     startButton.textContent = 'Submit';
-    restartButton.style.display = 'none'; // Hide restart button
+    restartButton.style.display = 'none';
 
     // Show the question area now that the quiz has started
     questionElement.style.display = 'block';
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var selectedAnswers = getSelectedAnswers();
     var currentQuestion = sampleQuestions[currentQuestionIndex];
 
-    // Check if selected answers are correct
+    // Checks to see if selected answers are correct
     var isCorrect = compareArrays(selectedAnswers, currentQuestion.answer);
 
-    // Provide feedback
+    // Provide feedback for correct or incorrect answer through alert prompt
     alert(isCorrect ? 'Correct!' : 'Incorrect!');
 
     if (isCorrect) {

@@ -1,10 +1,14 @@
 # Joshua-s-Quiz
+<<<<<<< HEAD
 
 ![Quiz Screenshot](assets/images/Screenshot (2).png)
 
+=======
+![Quiz Screenshot](https://freeimage.host/i/Jc24EYv)
+>>>>>>> ff303dd50ab8d556e3b853271bebca8913cc2f35
 # Coding Quiz Assignment
 
-Welcome to Joshua's Coding Quiz assignment! This project is designed to test your knowledge of various programming concepts. The quiz covers a range of topics, including HTML, JavaScript, and CSS.
+Welcome to My Coding Quiz assignment! This project is designed to test your knowledge of various programming concepts. The quiz covers a range of topics, including basic HTML, JavaScript, and CSS.
 
 ## Getting Started
 
@@ -39,6 +43,8 @@ If you wish to restart the quiz, click the "Restart Quiz" button.
 
 ## Bugs
  Current known bug is timer messing up on alert prompt. working out the fix.
+ if timer reaches zero, alert prompt recycles endlessly.
+ my high score tracker is currently incorrect. good thing is, whether you are right or wrong, you will have 5 points-working on a fix.
 
  
 

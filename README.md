@@ -1,4 +1,7 @@
 # Joshua-s-Quiz
+
+![Quiz Screenshot](assets/images/Screenshot (2).png)
+
 # Coding Quiz Assignment
 
 Welcome to Joshua's Coding Quiz assignment! This project is designed to test your knowledge of various programming concepts. The quiz covers a range of topics, including HTML, JavaScript, and CSS.

@@ -186,17 +186,23 @@ document.addEventListener('DOMContentLoaded', function () {
     if (arr1.length !== arr2.length) {
       return false;
     }
-
+  
     for (var i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
+      if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
+        // If both are arrays, compare their content
+        if (!compareArrays(arr1[i], arr2[i])) {
+          return false;
+        }
+      } else if (arr1[i] !== arr2[i]) {
+        // If not arrays, compare values
         return false;
       }
     }
-
+  
     return true;
   }
 
-  // Questions Data
+  // Questions
   var sampleQuestions = [
     {
       text: 'What does HTML stand for?',
@@ -293,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
       options: ['parseInt()', 'toInteger()', 'stringToNumber()', 'convertToInteger()'],
       answer: ['parseInt()'],
     },
-    //  more questions here
+    //  More questions here for more challenge
   ];
 
   function loadQuestion() {

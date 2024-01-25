@@ -174,13 +174,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function getSelectedAnswers() {
     var selectedAnswers = [];
     var checkboxes = document.querySelectorAll('input[name="answer"]:checked');
-
+  
     checkboxes.forEach(function (checkbox) {
-      selectedAnswers.push(checkbox.value);
+      selectedAnswers.push([checkbox.value]); // Store selected answers as arrays
     });
-
+  
     return selectedAnswers;
   }
+  
 
   function compareArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {

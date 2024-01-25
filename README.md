@@ -1,5 +1,5 @@
 # Joshua-s-Quiz
-![Quiz Screenshot](https://drive.google.com/file/d/156cNx9wLb0c5bCAra2nohukedNSdcWTq/view?usp=drive_link)
+![Quiz Screenshot](https://drive.google.com/file/d/156cNx9wLb0c5bCAra2nohukedNSdcWTq/view?usp=sharing)
 # Coding Quiz Assignment
 
 Welcome to My Coding Quiz assignment! This project is designed to test your knowledge of various programming concepts. The quiz covers a range of topics, including basic HTML, JavaScript, and CSS.
